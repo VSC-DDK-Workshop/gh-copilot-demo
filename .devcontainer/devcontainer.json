@@ -30,6 +30,9 @@
 				"github.copilot-chat",
 				"github.copilot"
 			]
+		},
+		"codespaces": {
+			"location": "SoutheastAsia"
 		}
 	}
 
