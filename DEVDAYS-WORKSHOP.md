@@ -43,7 +43,7 @@
     2.  In the new file, type the following comment to provide context to Copilot:
 
         ```typescript
-        // // validate date from text input in french format and convert it to a date object.
+        // validate date from text input in french format and convert it to a date object.
         ```
 
     3.  Copilot will suggest the necessary imports. Accept them.
@@ -68,9 +68,9 @@
 
     2.  Add the following comments on line 5 to guide Copilot:
 
-            ```typescript
-            // test the validateDate function
-            ```
+         ````typescript
+         // test the validateDate function
+         ````
     3.  Copilot will generate a unit test for the `validateDate` function. Review and accept it.
 
 
