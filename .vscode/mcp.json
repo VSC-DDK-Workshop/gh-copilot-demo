@@ -1,0 +1,33 @@
+{
+	"servers": {
+		"ADO": {
+			"type": "stdio",
+			"command": "npx",
+			"args": [
+				"-y",
+				"@azure-devops/mcp",
+				"${input:ado_org}"
+			],
+			"version": "0.0.1"
+		},
+		"GitHub": {
+			"url": "https://api.githubcopilot.com/mcp/",
+			"type": "http",
+			"version": "0.0.1"
+		},
+		"Playwright": {
+			"command": "npx",
+			"args": [
+				"@playwright/mcp@latest"
+			],
+			"type": "stdio"
+		}
+	},
+	"inputs": [
+		{
+			"id": "ado_org",
+			"type": "promptString",
+			"description": "Azure DevOps organization name  (e.g. 'contoso')"
+		}
+	]
+}
