@@ -1,0 +1,39 @@
+# CODEOWNERS file for GitHub Copilot Workshop
+# This file defines who should review pull requests for different parts of the codebase
+# For more information, see: https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+
+# Global owner - applies to everything in the repo unless overridden below
+* @VSCDD-Kenya-Workshop/Workshop-Facilitators
+
+# Backend API specific ownership
+/albums-api/ @VSCDD-Kenya-Workshop/Workshop-Facilitators
+
+# Frontend application specific ownership  
+/album-viewer/ @VSCDD-Kenya-Workshop/Workshop-Facilitators
+
+# Infrastructure as Code
+/iac/ @VSCDD-Kenya-Workshop/Workshop-Facilitators
+
+# Legacy code
+/legacy/ @VSCDD-Kenya-Workshop/Workshop-Facilitators
+
+# Configuration files
+*.json @VSCDD-Kenya-Workshop/Workshop-Facilitators
+*.yaml @VSCDD-Kenya-Workshop/Workshop-Facilitators
+*.yml @VSCDD-Kenya-Workshop/Workshop-Facilitators
+
+# Docker and DevContainer configuration
+/.devcontainer/ @VSCDD-Kenya-Workshop/Workshop-Facilitators
+Dockerfile* @VSCDD-Kenya-Workshop/Workshop-Facilitators
+docker-compose* @VSCDD-Kenya-Workshop/Workshop-Facilitators
+
+# CI/CD workflows
+/.github/workflows/ @VSCDD-Kenya-Workshop/Workshop-Facilitators
+
+# Documentation
+*.md @VSCDD-Kenya-Workshop/Workshop-Facilitators
+/docs/ @VSCDD-Kenya-Workshop/Workshop-Facilitators
+
+# Security and compliance files
+SECURITY.md @VSCDD-Kenya-Workshop/Workshop-Facilitators
+/.github/CODEOWNERS @VSCDD-Kenya-Workshop/Workshop-Facilitators
