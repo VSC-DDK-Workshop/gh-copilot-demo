@@ -9,7 +9,7 @@
 
 *   **[10 mins] Welcome & Setup:** Quick intros, environment setup, and goals.
 *   **[30 mins] Hands-On with GitHub Copilot:**
-    *   **Code Completion (10 mins):** Writing Unit Tests & Documentation
+    *   **Code Completion (10 mins):** Writing Code and Unit Tests
     *   **Agent Mode (15 mins):** Rewriting an API & Creating a Web App
     *   **Extending Copilot (5 mins):** Adding an MCP Server (ADO)
 *   **[10 mins] Copilot in GitHub UI:** Assigning a task to the Coding Agent
@@ -35,44 +35,50 @@
 
 ### Code Completion (10 mins)
 
-#### 1. Writing Unit Tests (5 mins)
+#### 1. Writing Code (5 mins)
 
-*   **Goal:** Use Copilot to generate unit tests for existing functions.
+*   **Goal:** Use Copilot to write code
 *   **Instructions:**
-    1.  Create a new file: `album-viewer/tests/validators.test.ts`
+    1.  Navigate to: `album-viewer/utils/validators.ts`.
     2.  In the new file, type the following comment to provide context to Copilot:
 
         ```typescript
-        // import testing libraries and the functions to be tested
+        // // validate date from text input in french format and convert it to a date object.
         ```
 
     3.  Copilot will suggest the necessary imports. Accept them.
 
         ```typescript
-        import {describe, it} from 'mocha';
-        import {expect} from 'chai';
-        import {validateDate, validateIPV6} from '../utils/validators';
+        export function validateDate(input: string): Date | null {
+            ...
+        }
+
+        export function validateIPV6(input: string): boolean {
+            ...
+        }
         ```
 
-    4.  Now, add a comment to describe the test you want to write:
+    4.  Copilot will generate the appropriate code. Review and accept it.
 
-        ```typescript
-        // test the validateDate function
-        ```
+#### 2. Generating Unit Tests (5 mins)
 
-    5.  Copilot will generate a complete test suite. Review and accept it.
-
-#### 2. Writing Documentation (5 mins)
-
-*   **Goal:** Use Copilot to generate documentation for your code.
+*   **Goal:** Use Copilot to generate unit tests for your code.
 *   **Instructions:**
-    1.  **Simple Documentation:**
-        *   Open `album-viewer/routes/index.js`.
-        *   Place your cursor on a new line above the `try` block inside the `router.get` function and type `//`.
-        *   Copilot will suggest a comment explaining the code. Accept it.
-    2.  **Standardized Documentation (JSDoc):**
-        *   In the same file, place your cursor on a new line above the `router.get` function definition and type `/**`.
-        *   Copilot will generate a JSDoc block with parameters and a description. Review and accept it.
+    1.  Open `album-viewer/tests/validators.test.ts`.
+
+    2.  Add the following comments on line 5 to guide Copilot:
+
+            ```typescript
+            // test the validateDate function
+            ```
+    3.  Copilot will generate a unit test for the `validateDate` function. Review and accept it.
+
+
+    4.  Run the tests to ensure everything is working correctly:
+
+        ```bash
+        npm test
+        ```
 
 ### Agent Mode (15 mins)
 
