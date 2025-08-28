@@ -27,7 +27,7 @@
         *   Log into your GitHub account. You can check that you have GitHub Copilot access by visiting [GitHub Copilot](https://github.com/settings/copilot/features).
         *   Navigate to the [GitHub Copilot Workshop Repository](https://github.com/VSCDD-Kenya-Workshop/gh-copilot-demo)
         *   Spin up a GitHub Codespace
-        *   Once Codespace has spun up you are ready to get started!
+        *   Once Codespace has spun up create a new branch with your github username (e.g., `john-doe`).
 
 ---
 
@@ -80,27 +80,29 @@
         npm test
         ```
 
+    5.  Commit your changes.
+
 ### Agent Mode (15 mins)
 
-#### 1. Rewriting an API (Optional - 5 mins)
+#### Adding Documentation for Validator Utility (Optional - 5 mins)
 
-*   **Goal:** Use Copilot's Agent Mode to rewrite the existing Node.js API.
+*   **Goal:** Use Copilot's Agent Mode to add documentation for the existing validator utility and its tests.
 *   **Instructions:**
     1.  Open the Copilot Chat view in VS Code (`Ctrl+Shift+I`).
     2.  Switch to **Agent Mode**.
+    3.  Select your model of choice (e.g., GPT-5).
     3.  Enter the following prompt:
 
-        ```
-        Create a new nodejs api named album-api to manage music albums. 
-        Create all basic routes to list, get, add, update and delete albums.
-        Create a collection with sample data. 
-        Data are kept in memory for the moment no need to database.
-        Add unit tests and run it
+        ```markdown
+        Add documentation for the validator utility located in the utils folder. 
+        Include details about its purpose, usage examples, and any important notes. 
+        Additionally, document the test cases for the validator utility. 
+        Ensure the documentation is structured and clear, and save it in the docs folder.
         ```
 
     4.  Follow the steps as Copilot executes the plan. You can intervene or provide additional instructions.
 
-#### 2. Creating a New Web App (10 mins)
+#### 2. Creating a New Web App (Optional - 10 mins)
 
 *   **Goal:** Use Copilot's Agent Mode to create a new Vue.js web app from scratch.
 *   **Instructions:**
