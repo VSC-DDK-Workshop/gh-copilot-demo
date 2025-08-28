@@ -109,12 +109,17 @@
     1.  Delete the existing `album-viewer` folder.
     2.  In the Copilot Chat view (in Agent Mode), enter the following prompt, making sure to reference the API files you created in the previous step:
 
-        ```
-        Create a new Vue app named album-app to manage music albums, using the album api #file:album-api/albumRoutes.js #file:album-api/albumModel.js
-        Create a splashscreen, a view for all routes, and a burger menu to navigate.
+        ```markdown
+        Create a new nodejs api named album-api to manage music albums. 
+        Create all basic routes to list, get, add, update and delete albums.
+
+        Create a collection with sample data. 
+        Data are kept in memory for the moment no need to database.
+
+        Add unit tests and run it
         ```
 
-    3.  Let Copilot work its magic! It will generate the entire Vue.js application structure and code.
+    3.  Let Copilot work its magic! It will create the necessary files and structure. Monitor the progress and provide additional instructions if needed.
 
 ### Extending Copilot (5 mins)
 
