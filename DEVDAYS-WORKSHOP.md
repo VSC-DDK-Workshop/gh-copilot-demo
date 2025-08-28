@@ -102,6 +102,8 @@
 
     4.  Follow the steps as Copilot executes the plan. You can intervene or provide additional instructions.
 
+    5. Push the changes to your branch, and open a pull request!
+
 #### 2. Creating a New Web App (Optional - 10 mins)
 
 *   **Goal:** Use Copilot's Agent Mode to create a new Vue.js web app from scratch.
@@ -121,43 +123,25 @@
 
     3.  Let Copilot work its magic! It will create the necessary files and structure. Monitor the progress and provide additional instructions if needed.
 
-### Extending Copilot (5 mins)
+### Extending Copilot with MCP servers
 
-#### Adding an MCP Server (ADO MCP Server)
+#### Using the Microsoft Learn MCP Server
+
+* **Goal:** Connect Copilot to the Microsoft Learn MCP server to access additional tools.
+* **Instructions:**
+    1. In Copilot Chat, switch to **Agent Mode**.
+    2. Click "Select Tools" and make sure the Microsoft Learn tool is enabled.
+    3. Try a prompt like: `Can you search in the docs how to create an Azure storage account using az cli?`
+
+#### Using the ADO MCP Server (Optional - 5 mins)
 
 *   **Goal:** Connect Copilot to Azure DevOps using an MCP server.
 *   **Instructions:**
-    1.  **Prerequisites:**
-        *   Ensure you have the Azure CLI installed and are logged in (`az login`).
-    2.  **Configuration:**
-        *   In your project's root, create a `.vscode/mcp.json` file.
-        *   Add the following configuration:
-
-            ```json
-            {
-              "inputs": [
-                {
-                  "id": "ado_org",
-                  "type": "promptString",
-                  "description": "Azure DevOps organization name (e.g. 'contoso')"
-                }
-              ],
-              "servers": {
-                "ado": {
-                  "type": "stdio",
-                  "command": "npx",
-                  "args": ["-y", "@azure-devops/mcp", "${input:ado_org}"]
-                }
-              }
-            }
-            ```
-
-    3.  **Start the Server:**
-        *   Save the `mcp.json` file and click "Start" in the VS Code notification.
-    4.  **Use the MCP Server:**
-        *   In Copilot Chat, switch to **Agent Mode**.
-        *   Click "Select Tools" and choose the Azure DevOps tools.
-        *   Try a prompt like: `List my work items in Azure DevOps.`
+    1. Navigate to `mcp.json` and uncomment the Azure DevOps MCP server
+    2. You will be asked to enter an organization, enter your current one.
+    3. In Copilot Chat, switch to **Agent Mode**.
+    4. Click "Select Tools" and choose the Azure evOps tools.
+    5. Try a prompt like: `Can you output work item with ID 3 in the 'internal' project?`
 
 ---
 
@@ -166,11 +150,28 @@
 ### Assigning a Task to the Copilot Coding Agent
 
 *   **Goal:** Assign a GitHub issue to the Copilot Coding Agent and have it write the code for you.
+
+#### Option 1 - Assign Task from VSCode
+
 *   **Instructions:**
-    1.  Go to the **Issues** tab in your forked repository on GitHub.com.
+    1.  Type the followin prompt in the chat:
+    ````markdown
+    Refactor the album-viewer frontend so that albums are 3 in a row rather than 1 in a row
+    ````
+    2. Click the "Delegate to coding agent" button
+
+    3. Navigate to the PR created by GitHub Copilot
+
+#### Option 2 - Assign Task from GitHub
+
+*   **Instructions:**
+    1.  Go to the **Issues** tab in the repository.
     2.  Create a new issue with a clear title and description. For example:
         *   **Title:** Create a new web app
-        *   **Description:** Use the existing `album-api` to create a new Vue.js web application named `album-app`. The app should have a splash screen, a view for all routes, and a burger menu for navigation.
+        *   **Description:** 
+        ````markdown
+        Use the existing `album-api` to create a new Vue.js web application named `album-app`. The app should have a splash screen, a view for all routes, and a burger menu for navigation.
+        ````
     3.  In the right-hand sidebar, under **Assignees**, select **Copilot**.
     4.  Copilot will now start working on the issue. You can track its progress in the issue's timeline and the pull request it creates.
 

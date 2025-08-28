@@ -1,6 +1,6 @@
 {
 	"servers": {
-		"ADO": {
+		"Azure DevOps": {
 			"type": "stdio",
 			"command": "npx",
 			"args": [
@@ -10,17 +10,9 @@
 			],
 			"version": "0.0.1"
 		},
-		"GitHub": {
-			"url": "https://api.githubcopilot.com/mcp/",
-			"type": "http",
-			"version": "0.0.1"
-		},
-		"Playwright": {
-			"command": "npx",
-			"args": [
-				"@playwright/mcp@latest"
-			],
-			"type": "stdio"
+		"Microsoft Learn": {
+			"url": "https://learn.microsoft.com/api/mcp",
+			"type": "http"
 		}
 	},
 	"inputs": [
