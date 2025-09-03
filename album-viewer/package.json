@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "test": "npx mocha --require ts-node/register \"tests/**/*.test.ts\""
+    "test": "npx mocha --require tsx/cjs \"tests/**/*.test.ts\""
   },
   "dependencies": {
     "axios": "^0.26.1",
