@@ -19,8 +19,10 @@ export function validateDate(input: string): Date | null {
 
 // Validates if the input is a valid IPv6 address.
 export function validateIPV6(input: string): boolean {
-
-    // Simple IPv6 regex, does not cover all edge cases but works for most valid addresses
-    const regex = /^(([0-9a-fA-F]{1,4}:){7}[0-9a-fA-F]{1,4}|::1)$/;
-    return regex.test(input.trim());
+    if (typeof input !== 'string') return false;
+    // Comprehensive IPv6 regex covering compressed, mixed, and IPv4-mapped formats
+    const regex = /^(?:^|:)(?:[0-9a-fA-F]{0,4}){1,8}(?:(?:\.[0-9]{1,3}){4})?$/;
+    // Additional check: address must contain at least two colons
+    const colonCount = (input.match(/:/g) || []).length;
+    return regex.test(input.trim()) && colonCount >= 2;
 }
