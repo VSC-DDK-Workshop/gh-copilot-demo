@@ -1,0 +1,25 @@
+{
+  "name": "album-api",
+  "version": "1.0.0",
+  "description": "Simple in-memory Album API",
+  "main": "src/server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "test": "mocha \"test/**/*.test.js\""
+  },
+  "keywords": [
+    "albums",
+    "api",
+    "express"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "chai": "^6.0.1",
+    "express": "^5.1.0",
+    "mocha": "^11.7.2",
+    "supertest": "^7.1.4"
+  }
+}
